@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<title>DNU Rest Client</title>
+<link rel='stylesheet prefetch'
+	href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch'
+	href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js'></script>
+<script
+	src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+<script src="hello.js"></script>
+</head>
+
+<body>
+<h1>DNU Rest Client</h1>
+	<div ng-app="demo" data-ng-controller="Hello">
+		<table
+			class="table table-bordered bordered table-striped table-condensed datatable"
+			ui-jq="dataTable" ui-options="dataTableOpt">
+			<thead>
+				<tr>
+					<th>Tracking Number</th>
+					<th>Shipment Code</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Tracking Number</th>
+					<th>Shipment Code</th>
+				</tr>
+			</tfoot>
+			<tbody>
+
+				<tr ng-repeat="g in data">
+					<td>{{g.trackingNumber}}</td>
+					<td>{{g.shipmentCode}}</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+</body>
+</html>
