@@ -29,20 +29,46 @@
 			<thead>
 				<tr>
 					<th>Tracking Number</th>
-					<th>Shipment Code</th>
+					<th>Destination location</th>
+					<th>Source System location</th>
+					<th>Source System Code</th>
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
 					<th>Tracking Number</th>
-					<th>Shipment Code</th>
+					<th>Destination location</th>
+					<th>Source System location</th>
+					<th>Source System Code</th>
 				</tr>
 			</tfoot>
 			<tbody>
 
 				<tr ng-repeat="g in data">
-					<td>{{g.trackingNumber}}</td>
-					<td>{{g.shipmentCode}}</td>
+					<td>{{g.attributes.trkng_nbr}}
+						</td>
+					<td>{{g.attributes.dest_loc}}
+						</td>
+					<td>
+					
+						<table class="table table-bordered bordered table-striped table-condensed datatable">
+							<tr ng-repeat="f in g.components.Document"> 
+								<td>{{f.attributes.src_sys_loc}}
+							</td>
+							</tr>
+
+						</table>
+					</td>
+					<td>
+					
+						<table class="table table-bordered bordered table-striped table-condensed datatable">
+							<tr ng-repeat="f in g.components.Document"> 
+								
+							<td>{{f.attributes.src_sys_cd}}
+							</td>
+							</tr>
+						</table>
+					</td>
 				</tr>
 			</tbody>
 		</table>
