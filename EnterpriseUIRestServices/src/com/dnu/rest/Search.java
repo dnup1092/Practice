@@ -10,9 +10,8 @@ public class Search {
 	
 	
 	@RequestMapping
-	public ArrayList<ShipmentDetail> getShipmentDetail() {
-		ArrayList<ShipmentDetail> arr = new ArrayList<>();
-		ShipmentDetail ship = new ShipmentDetail();
+	public ArrayList<PortalDTO> getShipmentDetail() {
+		/*ShipmentDetail ship = new ShipmentDetail();
 		ship.setShipmentCode(23);
 		ship.setTrackingNumber("562389");
 		arr.add(ship);
@@ -33,8 +32,55 @@ public class Search {
 		//arr.add(ship);
 		arr.add(ship2);
 		i++;
+		}*/
+		ArrayList<PortalDTO> testArray = new ArrayList<PortalDTO>();
+		PortalDTO dto = new PortalDTO("FOLDER");
+
+		dto.getAttributes().put("objectID","0b59658746321569");
+		dto.getAttributes().put("dest_loc","US");
+		dto.getAttributes().put("trkng_nbr","76523657894");
+		
+		PortalDTO docDto = new PortalDTO("DOCUMENT");
+		docDto.getAttributes().put("src_sys_loc", "IN");
+		docDto.getAttributes().put("src_sys_cd", "PTD");
+		docDto.getAttributes().put("objectID", "0959658746321569");
+		dto.getComponents().put(docDto.getAttributes().get("objectID"), docDto);
+		testArray.add(dto);
+		System.out.println("[OUT] " + dto.getAttributes().containsValue("0b59658746321569"));
+		
+		
+		if(!testArray.contains("0b59658746321569")) {
+			PortalDTO dto2 = new PortalDTO("FOLDER");
+			dto2.getAttributes().put("objectID","0b59658746321569");
+			dto2.getAttributes().put("dest_loc","INDIA");
+			dto2.getAttributes().put("trkng_nbr","76523657894");
 		}
-		return arr;
+		PortalDTO docDto2 = new PortalDTO("DOCUMENT");
+		docDto2.getAttributes().put("src_sys_loc", "IND");
+		docDto2.getAttributes().put("src_sys_cd", "PTDD");
+		docDto2.getAttributes().put("objectID", "095f56r2n98yh563");
+		dto.getComponents().put(docDto2.getAttributes().get("objectID"), docDto2);
+		
+		System.out.println("[OUT] " + dto.getAttributes().containsValue("0b59658746321569"));
+		
+		PortalDTO dto3 = null;
+
+		if(!testArray.contains("0bcv564bh25357uj6")) {
+			dto3 = new PortalDTO("FOLDER");
+			dto3.getAttributes().put("objectID","0bcv564bh25357uj6");
+			dto3.getAttributes().put("dest_loc","INDIA");
+			dto3.getAttributes().put("trkng_nbr","76523657894");
+		}
+		
+		PortalDTO docDto3 = new PortalDTO("DOCUMENT");
+		docDto3.getAttributes().put("src_sys_loc", "IN");
+		docDto3.getAttributes().put("src_sys_cd", "PTD");
+		docDto3.getAttributes().put("objectID", "09cvfba56g23ad25");
+		dto3.getComponents().put(docDto3.getAttributes().get("objectID"), docDto3);
+		
+		System.out.println("[OUT] " + dto3.getAttributes().containsValue("0b59658746321569"));
+		testArray.add(dto3);
+		return testArray;
 	}
 
 }
