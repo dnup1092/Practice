@@ -1,17 +1,18 @@
 package com.dnu.rest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class PortalDTO {
 	private String name;
 	private HashMap<String,String> attributes;
-	private HashMap<String,PortalDTO> components;
+	private HashMap<String,ArrayList<PortalDTO>> components;
 	
 	public PortalDTO(String nameOfDTO) {
 		name = nameOfDTO;
 		attributes = new HashMap<String,String>();
-		components = new HashMap<String,PortalDTO>();
+		components = new HashMap<String,ArrayList<PortalDTO>>();
 	}
 	
 	/**
@@ -31,7 +32,7 @@ public class PortalDTO {
 	/**
 	 * @return the components
 	 */
-	public HashMap<String, PortalDTO> getComponents() {
+	public HashMap<String, ArrayList<PortalDTO>> getComponents() {
 		return components;
 	}
 	
