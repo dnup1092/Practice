@@ -34,8 +34,9 @@ public class Search {
 		i++;
 		}*/
 		ArrayList<PortalDTO> testArray = new ArrayList<PortalDTO>();
+		ArrayList<PortalDTO> arrDoclist = new ArrayList<PortalDTO>();
+		ArrayList<PortalDTO> arrDoclist2 = new ArrayList<PortalDTO>();
 		PortalDTO dto = new PortalDTO("FOLDER");
-
 		dto.getAttributes().put("objectID","0b59658746321569");
 		dto.getAttributes().put("dest_loc","US");
 		dto.getAttributes().put("trkng_nbr","76523657894");
@@ -44,8 +45,10 @@ public class Search {
 		docDto.getAttributes().put("src_sys_loc", "IN");
 		docDto.getAttributes().put("src_sys_cd", "PTD");
 		docDto.getAttributes().put("objectID", "0959658746321569");
-		dto.getComponents().put(docDto.getAttributes().get("objectID"), docDto);
+		arrDoclist.add(docDto);
+		dto.getComponents().put("Document", arrDoclist);
 		testArray.add(dto);
+		
 		System.out.println("[OUT] " + dto.getAttributes().containsValue("0b59658746321569"));
 		
 		
@@ -59,7 +62,8 @@ public class Search {
 		docDto2.getAttributes().put("src_sys_loc", "IND");
 		docDto2.getAttributes().put("src_sys_cd", "PTDD");
 		docDto2.getAttributes().put("objectID", "095f56r2n98yh563");
-		dto.getComponents().put(docDto2.getAttributes().get("objectID"), docDto2);
+		arrDoclist.add(docDto);
+		dto.getComponents().put("Document", arrDoclist);
 		
 		System.out.println("[OUT] " + dto.getAttributes().containsValue("0b59658746321569"));
 		
@@ -76,7 +80,8 @@ public class Search {
 		docDto3.getAttributes().put("src_sys_loc", "IN");
 		docDto3.getAttributes().put("src_sys_cd", "PTD");
 		docDto3.getAttributes().put("objectID", "09cvfba56g23ad25");
-		dto3.getComponents().put(docDto3.getAttributes().get("objectID"), docDto3);
+		arrDoclist2.add(docDto3);
+		dto3.getComponents().put("Document", arrDoclist2);
 		
 		System.out.println("[OUT] " + dto3.getAttributes().containsValue("0b59658746321569"));
 		testArray.add(dto3);
